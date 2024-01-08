@@ -42,8 +42,7 @@ public class Employee{
 	@Column(name = "address")
 	private String address;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "dept_id", insertable = false, updatable = false)
-	@Fetch(FetchMode.JOIN)
+	@ManyToOne
+	@JoinColumn(name = "fk_dept_id")
 	private Department department;
 }
