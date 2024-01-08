@@ -14,6 +14,7 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -23,13 +24,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Employee{
 
 
 	@Id
 	@Column(name = "empID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long empID;
+	private Long empID;
 
 	@Column(name = "name")
 	private String name;

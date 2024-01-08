@@ -1,7 +1,9 @@
 package com.example.JPAjoinPactice001.bean;
 
+import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,8 +14,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 
 @Entity
@@ -21,6 +25,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@ToString
 public class Department {
 
 
@@ -35,6 +41,6 @@ public class Department {
 	@Column(name = "description")
 	private String description;
 
-	@OneToMany(targetEntity = Employee.class, mappedBy = "empID", orphanRemoval = false, fetch = FetchType.LAZY)
-	private Set<Employee> employees;
+    @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
+	private List<Employee> employees;
 }

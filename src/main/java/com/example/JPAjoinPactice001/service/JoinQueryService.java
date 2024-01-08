@@ -6,23 +6,26 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.example.JPAjoinPactice001.bean.Department;
 import com.example.JPAjoinPactice001.bean.DeptEmpDto;
 import com.example.JPAjoinPactice001.repository.DepartmentRepository;
 import com.example.JPAjoinPactice001.repository.EmployeeRepository;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class JoinQueryService {
 
-	@Resource
-	private DepartmentRepository departmentRepository;
+	
+	private final DepartmentRepository departmentRepository;
 
-	@Resource
-	private EmployeeRepository employeeRepository;
+	private final EmployeeRepository employeeRepository;
 
 	public List<DeptEmpDto> getDeptEmployeesLeftJoin() {
 		List<DeptEmpDto> list = departmentRepository.fetchEmpDeptDataLeftJoin();
 		list.forEach(l -> System.out.println(l));
-		employeeRepository.deleteById(1);
+		//employeeRepository.deleteById(1l);
 		return list;
 	}
 
@@ -43,5 +46,9 @@ public class JoinQueryService {
 		list.forEach(l -> System.out.println(l));
 		return list;
 	}
+	
+	public Department saveDepartment(Department department) {
+        return departmentRepository.save(department);
+    }
 
 }
