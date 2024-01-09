@@ -33,7 +33,7 @@ public class PostService {
 	}
 
 	public PostComment addCommentToPost(Long postId, PostComment comment) {
-		Post post = postRepository.findById(postId).orElse(null);
+		Post post = postRepository.findById(postId).orElse(null); 
 
 //		if (post != null) {
 //			post.getComments().add(comment);
