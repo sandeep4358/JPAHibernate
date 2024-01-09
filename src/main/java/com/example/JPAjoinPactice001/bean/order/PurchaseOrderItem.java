@@ -29,6 +29,7 @@ public class PurchaseOrderItem {
 
     private Integer quantity;    
     private String product;
+    
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "fk_purchase_order_id")
