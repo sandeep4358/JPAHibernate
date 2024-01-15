@@ -42,7 +42,7 @@ public class Employee{
 	@Column(name = "address")
 	private String address;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "fk_dept_id")
 	private Department department;
 }

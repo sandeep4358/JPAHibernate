@@ -7,6 +7,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -31,8 +32,20 @@ public class Post {
 
 	private String title;
 
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
 	private List<PostComment> comments = new ArrayList<>();
 
 	// Constructors, getters and setters removed for brevity
+	
+	
+	///below method is important for bidirecational realation ship for more details chekc the INTERVIEW.XML hIBERNATE021
+	public void addComments(PostComment comment) {
+		comments.add(comment);
+		comment.setPost(this);
+	}
+	
+	public void removeComments(PostComment comment) {
+		comments.remove(comment);
+		comment.setPost(null);
+	}
 }

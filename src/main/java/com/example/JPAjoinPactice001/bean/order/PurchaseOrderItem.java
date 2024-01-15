@@ -32,7 +32,6 @@ public class PurchaseOrderItem {
     
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "fk_purchase_order_id")
     private PurchaseOrder purchaseOrder;
 
     // Constructors, getters, and setters

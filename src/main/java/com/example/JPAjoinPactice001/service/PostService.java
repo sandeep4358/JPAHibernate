@@ -24,11 +24,10 @@ public class PostService {
 	}
 
 	public Post createPost(Post post) {
-		// Additional logic if needed
-
-		//post.getComments().add(new PostComment(1l, "My first review"));
-		//post.getComments().add(new PostComment(2l, "My second review"));
-		//post.getComments().add(new PostComment(3l, "My third review"));
+		//below is very important part of the bidirectional communication.
+		post.getComments().forEach(
+				p -> p.setPost(post)
+				);		
 		return postRepository.save(post);
 	}
 
