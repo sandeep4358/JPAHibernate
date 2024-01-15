@@ -1,15 +1,20 @@
 package com.example.JPAjoinPactice001.bean.socialmedia;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.print.attribute.standard.DateTimeAtCompleted;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,7 +41,8 @@ public class Post {
 	private List<PostComment> comments = new ArrayList<>();
 
 	// Constructors, getters and setters removed for brevity
-	
+	@Column(name = "published_on")
+	private java.sql.Timestamp publishedOn;
 	
 	///below method is important for bidirecational realation ship for more details chekc the INTERVIEW.XML hIBERNATE021
 	public void addComments(PostComment comment) {

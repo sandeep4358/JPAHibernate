@@ -9,13 +9,17 @@ import com.example.JPAjoinPactice001.bean.Department;
 import com.example.JPAjoinPactice001.bean.Employee;
 import com.example.JPAjoinPactice001.repository.EmployeeRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Service
+@Slf4j
 public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public Employee saveEmployee(Employee employee) {
-        return employeeRepository.save(employee);
+    public Employee saveEmployee(Employee employee) {    				
+      log.info("employee :: {}",employee);
+    	return employeeRepository.save(employee);
     }
     
     public Employee getEmployee(Long employeeId) {

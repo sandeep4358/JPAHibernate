@@ -14,6 +14,9 @@ public class DepartmentService {
     private DepartmentRepository departmentRepository;
 
     public Department saveDepartment(Department department) {
+    	//important line in the relation ship.
+    	//department.getEmployees().forEach(e->department.addEmployee(e));  // need to check why is it producing cuncurrent modification error.
+    	department.getEmployees().forEach(e->e.setDepartment(department));
         return departmentRepository.save(department);
     }
     
