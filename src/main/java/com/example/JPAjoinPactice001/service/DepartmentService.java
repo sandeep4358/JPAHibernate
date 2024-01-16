@@ -2,6 +2,8 @@ package com.example.JPAjoinPactice001.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,7 @@ public class DepartmentService {
     @Autowired
     private DepartmentRepository departmentRepository;
 
+    @Transactional
     public Department saveDepartment(Department department) {
     	//important line in the relation ship.
     	//department.getEmployees().forEach(e->department.addEmployee(e));  // need to check why is it producing cuncurrent modification error.

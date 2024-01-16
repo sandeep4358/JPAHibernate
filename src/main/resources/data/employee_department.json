@@ -1,0 +1,159 @@
+/*
+ login in the open ai and use below session lets see is he able to maintain that
+ https://chat.openai.com/c/de360bc5-b762-404c-a7c5-d40044bddd3d
+*/
+{"":[
+
+{  
+  "name": "Human Resources",
+  "description": "HR Department",
+  "employees": [
+    {
+      "employeeId": {
+        "employeeNumber": "001",
+        "companyNumber": "XYZ123"
+      },
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "address": "456 Maple Lane"
+    },
+    {
+      "employeeId": {
+        "employeeNumber": "002",
+        "companyNumber": "XYZ123"
+      },
+      "name": "Bob Miller",
+      "email": "bob.miller@example"
+
+},
+
+{
+  "name": "Sales",
+  "description": "Sales Department",
+  "employees": [
+    {
+      "employeeId": {
+        "employeeNumber": "401",
+        "companyNumber": "XYZ789"
+      },
+      "name": "Eva Johnson",
+      "email": "eva.johnson@example.com",
+      "address": "555 Cedar Avenue"
+    },
+    {
+      "employeeId": {
+        "employeeNumber": "402",
+        "companyNumber": "ABC123"
+      },
+      "name": "Frank White",
+      "email": "frank.white@example.com",
+      "address": "789 Birch Street"
+    }
+  ]
+},
+
+
+{
+  "name": "Research and Development",
+  "description": "R&D Department",
+  "employees": [
+    {
+      "employeeId": {
+        "employeeNumber": "601",
+        "companyNumber": "XYZ789"
+      },
+      "name": "Ivy White",
+      "email": "ivy.white@example.com",
+      "address": "333 Elm Avenue"
+    },
+    {
+      "employeeId": {
+        "employeeNumber": "602",
+        "companyNumber": "ABC123"
+      },
+      "name": "Jack Davis",
+      "email": "jack.davis@example.com",
+      "address": "444 Pine Lane"
+    }
+  ]
+}
+
+,
+
+{
+  "name": "Operations",
+  "description": "Operations Department",
+  "employees": [
+    {
+      "employeeId": {
+        "employeeNumber": "501",
+        "companyNumber": "XYZ789"
+      },
+      "name": "Grace Davis",
+      "email": "grace.davis@example.com",
+      "address": "101 Maple Lane"
+    },
+    {
+      "employeeId": {
+        "employeeNumber": "502",
+        "companyNumber": "ABC123"
+      },
+      "name": "Henry Miller",
+      "email": "henry.miller@example.com",
+      "address": "222 Oak Street"
+    }
+  ]
+}
+
+]}
+
+
+
+//from employee controller we directly create the employee 
+
+{
+  "employeeId": {
+    "employeeNumber": "301",
+    "companyNumber": "ABC123"
+  },
+  "name": "David Miller",
+  "email": "david.miller@example.com",
+  "address": "456 Pine Lane",
+  "department": {
+    "id": 4,
+    "name": "IT",
+    "description": "Information Technology Department"
+  }
+}
+
+
+{
+  "employeeId": {
+    "employeeNumber": "201",
+    "companyNumber": "XYZ789"
+  },
+  "name": "Charlie White",
+  "email": "charlie.white@example.com",
+  "address": "789 Elm Avenue",
+  "department": {
+    "id": 3,
+    "name": "Finance",
+    "description": "Finance Department"
+  }
+}
+
+
+{
+  "employeeId": {
+    "employeeNumber": "101",
+    "companyNumber": "ABC456"
+  },
+  "name": "Bob Davis",
+  "email": "bob.davis@example.com",
+  "address": "123 Oak Street",
+  "department": {
+    "id": 2,
+    "name": "Marketing",
+    "description": "Marketing Department"
+  }
+}
